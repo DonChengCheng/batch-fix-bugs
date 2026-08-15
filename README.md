@@ -220,7 +220,7 @@ node adapters/github.js check      # 或 zentao.js
 
 设计决策的完整推导写在这里，比 README 详细得多：
 
-- 《8 个 Agent 同时改一个仓库，我踩了哪些坑》—— worktree 隔离与并发编排 ⟦上篇链接⟧
+- [《8 个 Agent 同时改一个仓库，我踩了哪些坑》](https://juejin.cn/post/7673866197452472339) —— worktree 隔离与并发编排
 - 《AI 说「修好了」，凭什么信》—— 对抗式复核、三分类、确定性复验与红线 ⟦下篇链接⟧
 
 ## License
