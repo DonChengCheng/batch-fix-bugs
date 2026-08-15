@@ -1,0 +1,48 @@
+{
+  "demo": [
+    {
+      "id": "1024",
+      "title": "筛选条件从详情页返回后失效",
+      "severity": 2,
+      "status": "active",
+      "steps": "1. 在列表页选中筛选条件「已完成」\n2. 点击任意一条记录进入详情页\n3. 点击浏览器返回按钮",
+      "expected": "返回列表页后，筛选条件应保持为「已完成」",
+      "actual": "筛选条件被重置为「全部」，列表展示了全部数据",
+      "comments": ["复现环境：Chrome 120 / macOS", "移动端 H5 也能复现"],
+      "url": "https://example.invalid/issue/1024"
+    },
+    {
+      "id": "1025",
+      "title": "金额字段在小屏下溢出容器",
+      "severity": 3,
+      "status": "active",
+      "steps": "1. 将窗口宽度调至 375px\n2. 打开订单列表\n3. 查看金额超过 6 位数的行",
+      "expected": "金额应完整展示，或以省略号截断且 hover 可见完整值",
+      "actual": "金额溢出到相邻列，把状态标签挤出了容器",
+      "comments": [],
+      "url": "https://example.invalid/issue/1025"
+    },
+    {
+      "id": "1026",
+      "title": "导出按钮连点会发起多次请求",
+      "severity": 2,
+      "status": "active",
+      "steps": "1. 打开报表页\n2. 快速连续点击「导出」按钮 5 次",
+      "expected": "只发起一次导出请求，按钮在请求期间置为禁用",
+      "actual": "发起了 5 次请求，浏览器下载了 5 个相同的文件",
+      "comments": ["偶发，网络慢的时候更容易复现"],
+      "url": "https://example.invalid/issue/1026"
+    },
+    {
+      "id": "1027",
+      "title": "空状态文案在某些语言下换行错乱",
+      "severity": 4,
+      "status": "active",
+      "steps": "1. 切换语言为德语\n2. 进入一个没有数据的列表页",
+      "expected": null,
+      "actual": "空状态提示文字换行位置奇怪，第二行只有一个单词",
+      "comments": ["这条没写清楚期望是什么，用来验证 expected 为 null 的分支"],
+      "url": "https://example.invalid/issue/1027"
+    }
+  ]
+}

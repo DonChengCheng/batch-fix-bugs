@@ -1,0 +1,60 @@
+# ── 防止把内部信息提交上去 ────────────────────────────────────────
+# 这个仓库是公开的，而它对接的是内网缺陷系统。下面这些是最容易手滑的几类。
+
+# 适配器的本地配置 / 凭据（ZENTAO_CLI 路径、token、内网地址）
+.env
+.env.*
+!.env.example
+*.local.js
+*.local.json
+adapters/config.local.*
+adapters/*.private.*
+
+# 用真实数据替换 fixture 时，别把真实 bug 内容提交上来
+adapters/fixtures/*.local.json
+adapters/fixtures/real*.json
+adapters/fixtures/private*.json
+
+# 工作流跑出来的产物：分诊报告和 worktree 里全是真实 bug 内容和内部路径
+REPORT.md
+report-*.md
+.batchfix-worktrees/
+batchfix-*/
+
+# 从公司仓库复制文件时容易带进来的
+zentao-cli.js
+*.har
+*.log
+
+# ── 常规 ──────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# macOS / Windows
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+.claude/settings.local.json
+
+# 临时
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
